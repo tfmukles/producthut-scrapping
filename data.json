@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Tana",
+    "description": "Put your notes to work with voice and AI",
+    "image": "https://ph-files.imgix.net/88afa8cf-d8f7-4c6b-b13b-6b4203a7f097.svg?auto=compress&codec=mozjpeg&cs=strip&auto=format&w=48&h=48&fit=crop&frame=1",
+    "tags": ["Productivity", "Notes", "Artificial Intelligence"],
+    "comment": "564",
+    "link": "/products/tana#tana-2",
+    "websiteLink": "https://tana.inc/?ref=producthunt",
+    "builtWithData": {},
+    "technologyData": null,
+    "technologies": {
+      "frameworks": ["Next.js", "Radix UI"],
+      "javascriptLibraries": ["React", "Lightbox", "PrismJS"],
+      "cms": ["Sanity"]
+    }
+  }
+]

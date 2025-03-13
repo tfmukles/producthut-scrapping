@@ -1,0 +1,23 @@
+{
+  "name": "producthut",
+  "version": "1.0.0",
+  "main": "scrapt.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@ryntab/wappalyzer-node": "^2.1.4",
+    "builtwith-api": "^1.0.8",
+    "express": "^4.21.2",
+    "node-fetch": "^3.3.2",
+    "puppeteer": "^24.4.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "wappalyzer": "^7.0.3",
+    "wappalyzer-wrapper": "^4.4.7"
+  }
+}
