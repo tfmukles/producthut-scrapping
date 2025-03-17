@@ -75,6 +75,23 @@ export default function Home() {
     )
   );
 
+  // Add these helper functions
+  const getFrameworkCount = (framework: string) =>
+    initialData.filter((item) =>
+      item.technologies?.frameworks?.includes(framework)
+    ).length;
+
+  const getCMSCount = (cms: string) =>
+    initialData.filter((item) => item.technologies?.cms?.includes(cms)).length;
+
+  const getLibraryCount = (library: string) =>
+    initialData.filter((item) =>
+      item.technologies?.javascriptLibraries?.includes(library)
+    ).length;
+
+  const getTagCount = (tag: string) =>
+    initialData.filter((item) => item.tags.includes(tag)).length;
+
   const filteredData = initialData
     .filter((item) => {
       const matchesSearch =
@@ -174,7 +191,7 @@ export default function Home() {
                     <SelectItem value="all">All Frameworks</SelectItem>
                     {allFrameworks.map((framework) => (
                       <SelectItem key={framework} value={framework!}>
-                        {framework}
+                        {framework} ({getFrameworkCount(framework!)})
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -194,7 +211,7 @@ export default function Home() {
                     <SelectItem value="all">All CMS</SelectItem>
                     {allCMS.map((cms) => (
                       <SelectItem key={cms} value={cms!}>
-                        {cms}
+                        {cms} ({getCMSCount(cms!)})
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -217,7 +234,7 @@ export default function Home() {
                     <SelectItem value="all">All Libraries</SelectItem>
                     {allLibraries.map((library) => (
                       <SelectItem key={library} value={library!}>
-                        {library}
+                        {library} ({getLibraryCount(library!)})
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -250,8 +267,13 @@ export default function Home() {
                   <h2 className="text-lg font-semibold">Filter by Tags</h2>
                 </div>
               </AccordionTrigger>
-              <AccordionContent className="px-6 pb-6 max-h-[300px] overscroll-y-auto">
-                <div className="flex flex-wrap gap-2 h-full">
+              <AccordionContent className="px-6 pb-6">
+                <div
+                  className="flex flex-wrap gap-2 h-full max-h-[300px] "
+                  style={{
+                    overflowY: "scroll",
+                  }}
+                >
                   <Button
                     variant={selectedTag === "all" ? "default" : "outline"}
                     size="sm"
@@ -268,7 +290,7 @@ export default function Home() {
                       onClick={() => setSelectedTag(tag)}
                       className="rounded-full"
                     >
-                      {tag}
+                      {tag} ({getTagCount(tag)})
                     </Button>
                   ))}
                 </div>
